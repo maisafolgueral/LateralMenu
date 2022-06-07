@@ -14,7 +14,8 @@ body {
 }
 
 section {
-    height: 1500px;
+    padding: 200px;
+    height: 2000px;
     color: #FFF;
 }
 
@@ -53,7 +54,7 @@ section {
     background: #FFF;
     width: 0;
     height: 100vh;
-    animation: menu-close 0.5s;
+    transition: width 0.5s;
 
     ul {
         visibility: hidden;
@@ -90,8 +91,8 @@ section {
     }
 
     &.active {
-        animation: menu-open 0.5s;
-        width: 250px;
+        transition: width 0.5s;
+        width: 350px;
 
         ul {
             visibility: visible;
@@ -101,18 +102,14 @@ section {
     }
 }
 
-@keyframes menu-open {
-    from {
-        width: 0;
-    } to {
-        width: 250px;
-    }
-}
+@media (max-width: 480px) {
+    .lateral-menu {
+        position: fixed;
+        top: var(--menu-height);
+        left: 0;
 
-@keyframes menu-close {
-    from {
-        width: 250px;
-    } to {
-        width: 0;
+        &.active {
+            width: 100%;
+        }
     }
 }
