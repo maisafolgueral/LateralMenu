@@ -13,8 +13,22 @@ body {
     font-family: sans-serif;
 }
 
+section {
+    height: 1500px;
+    color: #FFF;
+}
+
 #app {
     margin-top: var(--menu-height);
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    height: 100%;
+    width: 100%;
+    overflow: auto;
 }
 
 .top-menu {
@@ -40,10 +54,6 @@ body {
     width: 0;
     height: 100vh;
     animation: menu-close 0.5s;
-
-    position: fixed;
-    top: var(--menu-height);
-    left: 0;
 
     ul {
         visibility: hidden;
